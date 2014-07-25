@@ -1,0 +1,27 @@
+User ID: <%= @user.id %>
+<br/>
+ -- User First Name: <%= @user.fname %>
+ <br/>
+ -- User Last Name: <%= @user.lname %>
+ <br/>
+ -- User Email: <%= @user.email %>
+ <br/>
+ -- User Password: <%= @user.password %>
+ <br/>
+ Post ID: <%= @post.id %> 
+<br/>
+  -- Post Title:
+ <br/>
+ -- -- <%= @post.title %>
+ <br/>
+ -- Post Body:
+ <br/>
+ -- -- <%= @post.body %>
+<%= form_for [@user, @post], html: {method: :put} do |f| %>
+ <%=f.label :edit_post_title %>
+ <%=f.text_field :title %>
+ <%=f.label :edit_body %>
+ <%=f.text_field :body %>
+
+ <%=f.submit :"Submit Edit" %>
+<% end %>

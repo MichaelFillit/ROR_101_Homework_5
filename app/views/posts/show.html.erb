@@ -1,0 +1,30 @@
+<br/>
+-- <a href="/users"> Show All Users </a>
+<br/>
+<% @user_id = @user.id %>
+User ID: <%= @user.id %> -- <a href="/users/<%= @user_id %>/posts"> See All Of This User's Posts </a>
+<br/>
+ -- User First Name: <%= @user.fname %>
+ <br/>
+ -- User Last Name: <%= @user.lname %>
+ <br/>
+ -- User Email: <%= @user.email %>
+ <br/>
+ -- User Password: <%= @user.password %>
+ <br/>
+ <br/>
+Post ID: <%= @post.id %> 
+<br/>
+ -- Post Title:
+ <br/>
+ -- -- <%= @post.title %>
+ <br/>
+ -- Post Body:
+ <br/>
+ -- -- <%= @post.body %>
+  <br/>
+ -- <a href="/users/<%= @user_id %>/posts/<%= @post.id %>/edit"> Edit Post </a>
+ -- <%= link_to "Delete Post", user_post_path(@user.id, @post.id), method: :delete %>
+ <br/>
+<br/>
+<%= link_to "Logout", session_path, method: :delete %>

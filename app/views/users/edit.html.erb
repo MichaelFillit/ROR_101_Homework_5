@@ -1,0 +1,21 @@
+User ID: <%= @user.id %>
+ <br/>
+ -- User First Name: <%= @user.fname %>
+ -- User Last Name: <%= @user.lname %>
+ <br/>
+ -- User Email: <%= @user.email %>
+ <br/>
+ -- User Password: <%= @user.password %>
+
+<%= form_for @user, html: {method: :put} do |f| %>
+ <%=f.label :edit_first_name %>
+ <%=f.text_field :fname %>
+<%=f.label :edit_last_name %>
+ <%=f.text_field :lname %>
+ <%=f.label :edit_email %>
+ <%=f.text_field :email %>
+ <%=f.label :edit_password %>
+ <%=f.text_field :password %>
+
+ <%=f.submit :"Submit Edit" %>
+<% end %>

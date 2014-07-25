@@ -1,0 +1,19 @@
+<a href="/users/new"> Create A User </a>
+<br/>
+<% @users.each do |user| %>
+<% @user_id = user.id %>
+<br/>
+User ID: <%= user.id %> -- <a href="/users/<%= @user_id %>"> Show User  </a>
+<br/>
+ -- User First Name: <%= user.fname %>
+ <br/>
+ -- User Last Name: <%= user.lname %>
+ <br/>
+ -- User Email: <%= user.email %>
+ <br/>
+ -- User Password: <%= user.password %>
+ <br/>
+<% end %>
+<br/>
+<br/>
+<%= link_to "Logout", session_path, method: :delete %>

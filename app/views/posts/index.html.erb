@@ -1,0 +1,36 @@
+<br/>
+-- <a href="/users"> Show All Users </a>
+<br/>
+<% @user_id = @user.id %>
+User ID: <%= @user.id %>
+<br/>
+ -- User First Name: <%= @user.fname %>
+ <br/>
+ -- User Last Name: <%= @user.lname %>
+ <br/>
+ -- User Email: <%= @user.email %>
+ <br/>
+ -- User Password: <%= @user.password %>
+<br/>
+<br/>
+Posts: <a href="/users/<%= @user_id %>/posts/new"> Create A Post </a>
+<br/>
+<% @user.posts.each do |post| %>
+<% @post_id = post.id %>
+<br/>
+ <br/>
+ Post ID: <%= post.id %>
+  <br/>
+ -- Post Title:
+ <br/>
+ -- -- <%= post.title %>
+ <br/>
+ -- Post Body:
+ <br/>
+ -- -- <%= post.body %>
+ <br/>
+ -- <a href="/users/<%= @user_id %>/posts/<%= @post_id %>"> See This Post </a>
+<% end %>
+<br/>
+<br/>
+<%= link_to "Logout", session_path, method: :delete %>
